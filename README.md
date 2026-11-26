@@ -8,27 +8,20 @@ Single-file edition.
 | [Compact](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207/grh-compact) | ~76,000 |
 | [Minimal](OneLineRH.lean) | 1 |
 
-```lean
-import New.Main theorem RH : RiemannHypothesis := New.zeta_zeros_on_line New.grh
-```
-
-The complete source file fits in 80 columns. Checked with Lean 4.35.0 using `propext`, `Classical.choice`, and `Quot.sound`.
+[OneLineRH.lean](OneLineRH.lean) contains the complete compact edition in one physical line. The file is 7,279,198 characters wide.
 
 <details>
-<summary>Reproduce the check</summary>
+<summary>Extract and build</summary>
 
-Run these commands from an empty directory with `git` and `elan` installed.
+The Lean source is stored as string literals. Running the file restores the original line breaks and module boundaries. Use Lean 4.35.0 and a destination directory that does not yet exist.
 
 ```sh
-git clone https://github.com/1337isnot1337/riemann-hypothesis-minimal.git
-git clone https://github.com/leanprover-community/riemann-hypothesis.git
-cd riemann-hypothesis
-git checkout e063a923620ee7787b4a1270421478645bf66bdb
-lake exe cache get
-lake env lean ../riemann-hypothesis-minimal/OneLineRH.lean
+lean --run OneLineRH.lean grh-compact
 ```
 
-`New.Main` supplies the generalized result. The last two terms specialize it to Mathlib’s `RiemannHypothesis`. The upstream proof is by Levent Alpöge with Claude. [Original announcement](https://alpo.ge/remark.pdf) · [Pinned Lean source](https://github.com/leanprover-community/riemann-hypothesis/blob/e063a923620ee7787b4a1270421478645bf66bdb/src/Main.lean#L1-L5)
+Append `--build` to download the dependency cache and build the extracted project. The extraction was run with Lean 4.35.0 and all 807 files were compared byte for byte against the pinned compact edition. The upstream project documents its kernel replay and axiom checks. [Upstream verification](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207/grh-compact#checks)
+
+The proof is by Levent Alpöge with Claude. The compact rewrite is by Luke Sernau and colleagues at Anthropic with Claude. This edition changes the packaging. [Original announcement](https://alpo.ge/remark.pdf) · [Pinned compact source](https://github.com/lsernau/grh-lean/tree/72fead102f663d5c7a407964a13dc0cf9d977207/grh-compact)
 
 </details>
 
