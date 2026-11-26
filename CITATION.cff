@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+title: "Riemann Hypothesis in Lean 4: Single-file Edition"
+message: >-
+  If you use this edition, please cite Cinna Davis’s site (https://itsdavis.com/)
+  and this repository (https://github.com/1337isnot1337/riemann-hypothesis-minimal).
+  If you use the proof, cite the original release (https://alpo.ge/remark.pdf)
+  and credit Levent Alpöge and Claude.
+authors:
+  - family-names: Davis
+    given-names: Cinna
+    website: https://itsdavis.com/
+url: https://github.com/1337isnot1337/riemann-hypothesis-minimal
+repository-code: https://github.com/1337isnot1337/riemann-hypothesis-minimal
