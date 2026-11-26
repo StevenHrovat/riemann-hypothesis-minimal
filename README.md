@@ -1,6 +1,6 @@
 # Riemann Hypothesis in Lean 4
 
-Single-file edition.
+Single-file edition of the Riemann Hypothesis and the Generalized Riemann Hypothesis for Dirichlet L-functions.
 
 | Edition | Lines of Lean shipped |
 | --- | ---: |
